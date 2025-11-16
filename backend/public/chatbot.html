@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Career Counselor - CareerPilot AI</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="chatbot.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-robot"></i>
+                <span>CareerPilot AI</span>
+            </div>
+            <a href="dashboard.html" class="btn btn-back">
+                <i class="fas fa-arrow-left"></i>
+                Back to Dashboard
+            </a>
+        </div>
+    </nav>
+
+    <!-- Chatbot Container -->
+    <div class="chatbot-container">
+        <!-- Chat History Sidebar -->
+        <div class="chat-sidebar">
+            <div class="sidebar-header">
+                <h3><i class="fas fa-robot"></i> AI Career Counselor</h3>
+                <button class="btn-new-chat" onclick="startNewChat()">
+                    <i class="fas fa-plus"></i>
+                    New Chat
+                </button>
+            </div>
+            
+            <div class="chat-history" id="chatHistory">
+                <!-- Chat history items will be populated here -->
+                <div class="history-item active" onclick="loadChat('default')">
+                    <i class="fas fa-comments"></i>
+                    <span>Career Guidance</span>
+                </div>
+            </div>
+            
+            <div class="sidebar-footer">
+                <div class="user-info">
+                    <i class="fas fa-user-circle"></i>
+                    <span id="userName">User</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Chat Area -->
+        <div class="chat-main">
+            <!-- Chat Header -->
+            <div class="chat-header">
+                <div class="chat-title">
+                    <h2><i class="fas fa-robot"></i> AI Career Counselor Chatbot </h2>
+                    <p>Your personalized career guidance assistant</p>
+                </div>
+                <div class="chat-actions">
+                    <button class="btn-clear" onclick="clearConversation()" title="Clear Conversation">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Chat Messages -->
+            <div class="chat-messages" id="chatMessages">
+                <!-- Welcome message -->
+                <div class="message ai-message">
+                    <div class="message-avatar">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="message-content">
+                        <div class="message-text">
+                            <p>Hello! I'm your AI Career Counselor. I'm here to help you with:</p>
+                            <ul>
+                                <li>Career path exploration and guidance</li>
+                                <li>Skill assessment and development</li>
+                                <li>Job market insights and trends</li>
+                                <li>Resume and interview preparation</li>
+                                <li>Professional development strategies</li>
+                            </ul>
+                            <p>How can I assist you with your career journey today?</p>
+                        </div>
+                        <div class="message-time">Just now</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chat Input -->
+            <div class="chat-input-container">
+                <div class="chat-input-wrapper">
+                    <textarea 
+                        id="chatInput" 
+                        class="chat-input" 
+                        placeholder="Type your message here..."
+                        rows="1"
+                    ></textarea>
+                    <button class="btn-send" onclick="sendMessage()" id="sendButton">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+                <div class="input-footer">
+                    <span class="input-hint">Press Enter to send, Shift+Enter for new line</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay" style="display: none;">
+        <div class="loading-content">
+            <div class="typing-indicator">
+                <div class="typing-dot"></div>
+                <div class="typing-dot"></div>
+                <div class="typing-dot"></div>
+            </div>
+            <p>AI is thinking...</p>
+        </div>
+    </div>
+
+    <script src="chatbot.js"></script>
+</body>
+</html>

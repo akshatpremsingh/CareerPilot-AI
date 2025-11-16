@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - AI Career Mentor</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="dashboard-styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Background Animation -->
+    <div class="dashboard-background">
+        <div class="floating-particles"></div>
+        <div class="gradient-overlay"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-robot"></i>
+                <span>AI Career</span>
+            </div>
+            <div class="nav-menu">
+                <a href="#dashboard" class="nav-link active">
+                    <i class="fas fa-tachometer-alt"></i>
+                    Dashboard
+                </a>
+                <a href="#users" class="nav-link">
+                    <i class="fas fa-users"></i>
+                    Users
+                </a>
+                <a href="#analytics" class="nav-link">
+                    <i class="fas fa-chart-bar"></i>
+                    Analytics
+                </a>
+                <a href="#settings" class="nav-link">
+                    <i class="fas fa-cog"></i>
+                    Settings
+                </a>
+            </div>
+            <div class="nav-actions">
+                <a href="index.html" class="nav-link">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </a>
+                <a href="chatbot.html" class="nav-chatbot-btn">
+                    <i class="fas fa-robot"></i>
+                    <span>AI Counselor</span>
+                </a>
+                <div class="user-info">
+                    <i class="fas fa-user-circle"></i>
+                    <span>Admin</span>
+                </div>
+                <button class="btn btn-logout" onclick="logout()">
+                    <i class="fas fa-sign-out-alt"></i>
+                    Logout
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Dashboard Content -->
+    <div class="dashboard-container">
+        <div class="dashboard-header">
+            <h1>Welcome Admin! 👨‍💼</h1>
+            <p>Platform administration dashboard - Manage users and system</p>
+        </div>
+
+        <div class="dashboard-grid">
+            <!-- Platform Stats -->
+            <div class="dashboard-card stats-card">
+                <h3>Platform Overview</h3>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h4>1,247</h4>
+                            <p>Total Users</p>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h4>892</h4>
+                            <p>Students</p>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-icon">
+                            <i class="fas fa-chalkboard-teacher"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h4>45</h4>
+                            <p>Mentors</p>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-icon">
+                            <i class="fas fa-cog"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h4>3</h4>
+                            <p>Admins</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Users -->
+            <div class="dashboard-card">
+                <h3>Recent Registrations</h3>
+                <div class="users-list">
+                    <div class="user-item">
+                        <div class="user-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="user-content">
+                            <h4>Sarah Wilson</h4>
+                            <p>sarah.wilson@email.com</p>
+                            <span class="user-role student">Student</span>
+                        </div>
+                        <div class="user-actions">
+                            <button class="btn btn-small">View</button>
+                        </div>
+                    </div>
+                    <div class="user-item">
+                        <div class="user-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="user-content">
+                            <h4>Dr. Michael Chen</h4>
+                            <p>michael.chen@email.com</p>
+                            <span class="user-role mentor">Mentor</span>
+                        </div>
+                        <div class="user-actions">
+                            <button class="btn btn-small">View</button>
+                        </div>
+                    </div>
+                    <div class="user-item">
+                        <div class="user-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="user-content">
+                            <h4>Emily Rodriguez</h4>
+                            <p>emily.rodriguez@email.com</p>
+                            <span class="user-role student">Student</span>
+                        </div>
+                        <div class="user-actions">
+                            <button class="btn btn-small">View</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- System Health -->
+            <div class="dashboard-card">
+                <h3>System Health</h3>
+                <div class="system-metrics">
+                    <div class="metric-item">
+                        <div class="metric-header">
+                            <h4>Server Status</h4>
+                            <span class="status-badge online">Online</span>
+                        </div>
+                        <div class="metric-bar">
+                            <div class="metric-fill" style="width: 98%"></div>
+                        </div>
+                        <p>98% Uptime</p>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-header">
+                            <h4>Database</h4>
+                            <span class="status-badge online">Healthy</span>
+                        </div>
+                        <div class="metric-bar">
+                            <div class="metric-fill" style="width: 95%"></div>
+                        </div>
+                        <p>95% Performance</p>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-header">
+                            <h4>AI Services</h4>
+                            <span class="status-badge online">Active</span>
+                        </div>
+                        <div class="metric-bar">
+                            <div class="metric-fill" style="width: 92%"></div>
+                        </div>
+                        <p>92% Response Rate</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="dashboard-card">
+                <h3>Admin Actions</h3>
+                <div class="quick-actions">
+                    <button class="action-btn">
+                        <i class="fas fa-user-plus"></i>
+                        <span>Add User</span>
+                    </button>
+                    <button class="action-btn">
+                        <i class="fas fa-database"></i>
+                        <span>Backup Data</span>
+                    </button>
+                    <button class="action-btn">
+                        <i class="fas fa-chart-line"></i>
+                        <span>View Reports</span>
+                    </button>
+                    <button class="action-btn">
+                        <i class="fas fa-cog"></i>
+                        <span>System Settings</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Action Button -->
+    <button class="chatbot-fab" onclick="openChatbot()" title="Chat with AI Career Counselor">
+        <i class="fas fa-robot"></i>
+    </button>
+
+    <script src="dashboard-script.js"></script>
+    <script src="chatbot-global.js"></script>
+</body>
+</html>

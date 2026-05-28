@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Generator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="resume-generator.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+    <!-- Floating particles background -->
+    <div class="particles"></div>
+    
+    <div class="app-container">
+        <header class="app-header">
+            <div class="container">
+                <h1>Resume Generator</h1>
+                <p>Create a professional resume with our advanced dark-themed generator</p>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <div class="form-section">
+                <form id="resumeForm" class="resume-form">
+                    <!-- Personal Information -->
+                    <section class="form-section-block">
+                        <h2>Personal Information</h2>
+                        <div class="form-group">
+                            <label class="form-label" for="fullName">Full Name *</label>
+                            <input type="text" id="fullName" name="fullName" class="form-control" required>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label" for="email">Email *</label>
+                                <input type="email" id="email" name="email" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="phone">Phone *</label>
+                                <input type="tel" id="phone" name="phone" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="address">Address</label>
+                            <input type="text" id="address" name="address" class="form-control" placeholder="City, State/Province, Country">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label" for="linkedin">LinkedIn URL</label>
+                                <input type="url" id="linkedin" name="linkedin" class="form-control" placeholder="https://linkedin.com/in/yourprofile">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="website">Portfolio/Website</label>
+                                <input type="url" id="website" name="website" class="form-control" placeholder="https://yourwebsite.com">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="summary">Professional Summary</label>
+                            <textarea id="summary" name="summary" class="form-control" rows="4" placeholder="Brief overview of your professional background and career objectives..."></textarea>
+                        </div>
+                    </section>
+
+                    <!-- Education -->
+                    <section class="form-section-block">
+                        <div class="section-header">
+                            <h2>Education</h2>
+                            <button type="button" class="btn btn-primary btn-sm" id="addEducation">Add Education</button>
+                        </div>
+                        <div id="educationContainer"></div>
+                    </section>
+
+                    <!-- Work Experience -->
+                    <section class="form-section-block">
+                        <div class="section-header">
+                            <h2>Work Experience</h2>
+                            <button type="button" class="btn btn-primary btn-sm" id="addExperience">Add Experience</button>
+                        </div>
+                        <div id="experienceContainer"></div>
+                    </section>
+
+                    <!-- Skills -->
+                    <section class="form-section-block">
+                        <h2>Skills</h2>
+                        <div class="skills-container">
+                            <div class="form-group">
+                                <label class="form-label">Technical Skills</label>
+                                <div class="skill-input-group">
+                                    <input type="text" id="technicalSkillInput" class="form-control" placeholder="Enter a technical skill">
+                                    <select id="technicalSkillLevel" class="form-control">
+                                        <option value="Beginner">Beginner</option>
+                                        <option value="Intermediate">Intermediate</option>
+                                        <option value="Advanced">Advanced</option>
+                                        <option value="Expert">Expert</option>
+                                    </select>
+                                    <button type="button" class="btn btn-secondary btn-sm" id="addTechnicalSkill">Add</button>
+                                </div>
+                                <div id="technicalSkillsList" class="skills-list"></div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Soft Skills</label>
+                                <div class="skill-input-group">
+                                    <input type="text" id="softSkillInput" class="form-control" placeholder="Enter a soft skill">
+                                    <button type="button" class="btn btn-secondary btn-sm" id="addSoftSkill">Add</button>
+                                </div>
+                                <div id="softSkillsList" class="skills-list"></div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Languages</label>
+                                <div class="skill-input-group">
+                                    <input type="text" id="languageInput" class="form-control" placeholder="Enter a language">
+                                    <select id="languageLevel" class="form-control">
+                                        <option value="Basic">Basic</option>
+                                        <option value="Conversational">Conversational</option>
+                                        <option value="Fluent">Fluent</option>
+                                        <option value="Native">Native</option>
+                                    </select>
+                                    <button type="button" class="btn btn-secondary btn-sm" id="addLanguage">Add</button>
+                                </div>
+                                <div id="languagesList" class="skills-list"></div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Projects -->
+                    <section class="form-section-block">
+                        <div class="section-header">
+                            <h2>Projects</h2>
+                            <button type="button" class="btn btn-primary btn-sm" id="addProject">Add Project</button>
+                        </div>
+                        <div id="projectsContainer"></div>
+                    </section>
+
+                    <!-- Certifications -->
+                    <section class="form-section-block">
+                        <div class="section-header">
+                            <h2>Certifications</h2>
+                            <button type="button" class="btn btn-primary btn-sm" id="addCertification">Add Certification</button>
+                        </div>
+                        <div id="certificationsContainer"></div>
+                    </section>
+
+                    <!-- Achievements -->
+                    <section class="form-section-block">
+                        <div class="section-header">
+                            <h2>Achievements</h2>
+                            <button type="button" class="btn btn-primary btn-sm" id="addAchievement">Add Achievement</button>
+                        </div>
+                        <div id="achievementsContainer"></div>
+                    </section>
+
+                    <!-- Form Actions -->
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-secondary-gradient" id="clearForm">Clear Form</button>
+                        <button type="button" class="btn btn-primary-gradient btn-lg" id="generatePDF">Generate PDF</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="preview-section">
+                <div class="preview-header">
+                    <h3>Resume Preview</h3>
+                </div>
+                <div class="resume-preview" id="resumePreview">
+                    <div class="resume-header">
+                        <h1 id="previewName">Your Name</h1>
+                        <div class="resume-contact">
+                            <span id="previewEmail">your.email@example.com</span>
+                            <span id="previewPhone">+1 (555) 123-4567</span>
+                            <span id="previewAddress">Your Address</span>
+                        </div>
+                        <div class="resume-links">
+                            <span id="previewLinkedin"></span>
+                            <span id="previewWebsite"></span>
+                        </div>
+                    </div>
+
+                    <div class="resume-summary" id="resumeSummarySection" style="display: none;">
+                        <h3>Professional Summary</h3>
+                        <p id="previewSummary"></p>
+                    </div>
+
+                    <div class="resume-section" id="resumeEducationSection" style="display: none;">
+                        <h3>Education</h3>
+                        <div id="previewEducation"></div>
+                    </div>
+
+                    <div class="resume-section" id="resumeExperienceSection" style="display: none;">
+                        <h3>Work Experience</h3>
+                        <div id="previewExperience"></div>
+                    </div>
+
+                    <div class="resume-section" id="resumeSkillsSection" style="display: none;">
+                        <h3>Skills</h3>
+                        <div id="previewSkills"></div>
+                    </div>
+
+                    <div class="resume-section" id="resumeProjectsSection" style="display: none;">
+                        <h3>Projects</h3>
+                        <div id="previewProjects"></div>
+                    </div>
+
+                    <div class="resume-section" id="resumeCertificationsSection" style="display: none;">
+                        <h3>Certifications</h3>
+                        <div id="previewCertifications"></div>
+                    </div>
+
+                    <div class="resume-section" id="resumeAchievementsSection" style="display: none;">
+                        <h3>Achievements</h3>
+                        <div id="previewAchievements"></div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Loading overlay -->
+    <div id="loadingOverlay" class="loading-overlay hidden">
+        <div class="loading-content">
+            <div class="spinner"></div>
+            <p>Generating your PDF...</p>
+        </div>
+    </div>
+
+    <script src="resume-generator.js"></script>
+</body>
+</html>

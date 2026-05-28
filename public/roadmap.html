@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Roadmap - CareerPilot AI</title>
+    <link rel="stylesheet" href="roadmap-styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-robot"></i>
+                <span>CareerPilot AI</span>
+            </div>
+            <a href="chatbot.html" class="nav-chatbot-btn">
+                <i class="fas fa-robot"></i>
+                <span>AI Counselor</span>
+            </a>
+            <a href="dashboard.html" class="btn btn-back">
+                <i class="fas fa-arrow-left"></i>
+                Back to Dashboard
+            </a>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="breadcrumb-container">
+            <a href="dashboard.html" class="breadcrumb-item">
+                <i class="fas fa-home"></i>
+                Dashboard
+            </a>
+            <i class="fas fa-chevron-right breadcrumb-separator"></i>
+            <span class="breadcrumb-item active">Roadmap</span>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-container">
+        <div class="roadmap-card">
+            <div class="card-header">
+                <h1 class="card-title">Discover the roadmap to your goals</h1>
+                <p class="card-subtitle">Enter a role below to generate a personalized roadmap</p>
+            </div>
+
+            <form class="roadmap-form" id="roadmapForm">
+                <div class="input-group">
+                    <label for="roleInput" class="input-label">Enter a role</label>
+                    <input 
+                        type="text" 
+                        id="roleInput" 
+                        class="role-input" 
+                        placeholder="e.g., Frontend Developer, Data Scientist, Product Manager"
+                        required
+                    >
+                </div>
+
+                <div class="format-selection">
+                    <label class="format-label">Choose your format:</label>
+                    <div class="format-cards">
+                        <div class="format-card" data-format="course">
+                            <div class="format-icon">📘</div>
+                            <div class="format-content">
+                                <h3>Course</h3>
+                                <p>Structured learning path with modules and lessons</p>
+                            </div>
+                        </div>
+                        <div class="format-card" data-format="roadmap">
+                            <div class="format-icon">🗺️</div>
+                            <div class="format-content">
+                                <h3>Roadmap</h3>
+                                <p>Visual journey with milestones and checkpoints</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="optional-section">
+                    <label class="checkbox-container">
+                        <input type="checkbox" id="enhancedRoadmap" class="enhance-checkbox">
+                        <span class="checkmark"></span>
+                        Answer the following questions for a better roadmap
+                    </label>
+                </div>
+
+                <button type="submit" class="generate-btn" id="generateBtn">
+                    <i class="fas fa-magic"></i>
+                    Generate Roadmap
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Floating Action Button -->
+    <button class="chatbot-fab" onclick="openChatbot()" title="Chat with AI Career Counselor">
+        <i class="fas fa-robot"></i>
+    </button>
+
+    <script src="roadmap-script.js"></script>
+    <script src="chatbot-global.js"></script>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Your Profile - AI Career Mentor</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="auth-styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Background Animation -->
+    <div class="auth-background">
+        <div class="floating-particles"></div>
+        <div class="gradient-overlay"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-robot"></i>
+                <span>AI Career</span>
+            </div>
+            <div class="nav-actions">
+                <a href="index.html" class="nav-link">
+                    <i class="fas fa-home"></i>
+                    Back to Home
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Onboarding Container -->
+    <div class="auth-container">
+        <div class="auth-card">
+            <div class="auth-header">
+                <div class="auth-logo">
+                    <i class="fas fa-user-plus"></i>
+                </div>
+                <h1>Complete Your Profile</h1>
+                <p>Help us personalize your AI-powered career journey</p>
+            </div>
+
+            <form class="auth-form" id="onboardingForm">
+                <div class="form-group">
+                    <div class="input-icon">
+                        <i class="fas fa-user"></i>
+                        <input type="text" id="fullName" placeholder="Full Name" required>
+                    </div>
+                    <div class="error-message" id="fullNameError"></div>
+                </div>
+
+                <div class="form-group">
+                    <div class="input-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                        <select id="educationLevel" required>
+                            <option value="">Select Education Level</option>
+                            <option value="High School">High School</option>
+                            <option value="Undergraduate">Undergraduate</option>
+                            <option value="Graduate">Graduate</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <div class="error-message" id="educationLevelError"></div>
+                </div>
+
+                <div class="form-group">
+                    <div class="input-icon">
+                        <i class="fas fa-tools"></i>
+                        <input type="text" id="skills" placeholder="Skills (e.g. Java, HTML, Teamwork)" required>
+                    </div>
+                    <div class="error-message" id="skillsError"></div>
+                </div>
+
+                <div class="form-group">
+                    <div class="input-icon">
+                        <i class="fas fa-bullseye"></i>
+                        <textarea id="careerGoal" placeholder="Describe your career goal..." required rows="4"></textarea>
+                    </div>
+                    <div class="error-message" id="careerGoalError"></div>
+                </div>
+
+                <button type="submit" class="auth-btn">
+                    <span>Complete Profile</span>
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </form>
+        </div>
+
+        <!-- AI Assistant Panel -->
+        <div class="ai-assistant">
+            <div class="ai-header">
+                <i class="fas fa-robot"></i>
+                <span>AI Assistant</span>
+            </div>
+            <div class="ai-content">
+                <div class="ai-message">
+                    <i class="fas fa-lightbulb"></i>
+                    <p>Let's personalize your experience! This information helps our AI provide better career guidance.</p>
+                </div>
+                <div class="ai-benefits">
+                    <h3>Why Complete Your Profile?</h3>
+                    <div class="benefit-item">
+                        <i class="fas fa-chart-line"></i>
+                        <span><strong>Personalized Recommendations</strong> Based on your skills and goals</span>
+                    </div>
+                    <div class="benefit-item">
+                        <i class="fas fa-users"></i>
+                        <span><strong>Better Mentor Matching</strong> Connect with relevant mentors</span>
+                    </div>
+                    <div class="benefit-item">
+                        <i class="fas fa-road"></i>
+                        <span><strong>Custom Learning Path</strong> Tailored to your career objectives</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="onboarding-script.js"></script>
+</body>
+</html>

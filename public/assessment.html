@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Assessment - CareerPilot AI</title>
+    <link rel="stylesheet" href="assessment-styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-robot"></i>
+                <span>CareerPilot AI</span>
+            </div>
+            <a href="chatbot.html" class="nav-chatbot-btn">
+                <i class="fas fa-robot"></i>
+                <span>AI Counselor</span>
+            </a>
+            <a href="index.html" class="btn btn-back">
+                <i class="fas fa-arrow-left"></i>
+                Back to Home
+            </a>
+        </div>
+    </nav>
+
+    <!-- Assessment Container -->
+    <div class="assessment-container">
+        <!-- Progress Bar -->
+        <div class="progress-section">
+            <div class="progress-info">
+                <span class="progress-text">Question <span id="currentQuestion">1</span> of 10</span>
+                <span class="progress-percentage" id="progressPercentage">10%</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+        </div>
+
+        <!-- Question Container -->
+        <div class="question-container" id="questionContainer">
+            <!-- Questions will be dynamically loaded here -->
+        </div>
+
+        <!-- Navigation Buttons -->
+        <div class="navigation-buttons">
+            <button class="btn btn-secondary" id="prevBtn" onclick="previousQuestion()">
+                <i class="fas fa-chevron-left"></i>
+                Previous
+            </button>
+            <button class="btn btn-primary" id="nextBtn" onclick="nextQuestion()">
+                Next
+                <i class="fas fa-chevron-right"></i>
+            </button>
+            <button class="btn btn-success" id="submitBtn" onclick="submitAssessment()" style="display: none;">
+                <i class="fas fa-check"></i>
+                Submit Assessment
+            </button>
+        </div>
+    </div>
+
+    <!-- Results Modal -->
+    <div class="modal" id="resultsModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2><i class="fas fa-trophy"></i> Assessment Complete!</h2>
+                <button class="modal-close" onclick="closeResults()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="score-section">
+                    <div class="score-circle">
+                        <span id="totalScore">0</span>
+                        <span class="score-max">/ 100</span>
+                    </div>
+                    <h3 id="skillLevel">Skill Level</h3>
+                    <p id="skillDescription">Description will appear here</p>
+                </div>
+                
+                <div class="answers-summary">
+                    <h4>Your Answers Summary</h4>
+                    <div id="answersList">
+                        <!-- Answers will be populated here -->
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" onclick="goToDashboard()">
+                    <i class="fas fa-home"></i>
+                    Go to Dashboard
+                </button>
+                <button class="btn btn-secondary" onclick="retakeAssessment()">
+                    <i class="fas fa-redo"></i>
+                    Retake Assessment
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Action Button -->
+    <button class="chatbot-fab" onclick="openChatbot()" title="Chat with AI Career Counselor">
+        <i class="fas fa-robot"></i>
+    </button>
+
+    <script src="assessment-script.js"></script>
+    <script src="chatbot-global.js"></script>
+</body>
+</html>

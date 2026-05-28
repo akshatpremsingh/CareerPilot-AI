@@ -31,6 +31,7 @@ app.use('/api/chat', chatRoutes);
 app.use('/api/profile', profileRoutes);
 
 // 📩 Contact form route
+// 📩 Contact form route
 app.post('/api/contact', async (req, res) => {
 
   const { name, email, message } = req.body;
@@ -44,49 +45,73 @@ app.post('/api/contact', async (req, res) => {
 
   try {
 
+    // ✅ Gmail transporter
     const transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASS
-      }
+      },
+      connectionTimeout: 60000,
+      greetingTimeout: 30000,
+      socketTimeout: 60000
     });
 
-    // Email to admin
+    // ✅ Verify transporter connection
+    await transporter.verify();
+
+    // ✅ Send email to admin
     await transporter.sendMail({
       from: `"AI Career Counselor" <${process.env.EMAIL_USER}>`,
       replyTo: email,
       to: process.env.EMAIL_USER,
       subject: `New Contact Form Message from ${name}`,
-      text: message,
+      text: `
+Name: ${name}
+Email: ${email}
+
+Message:
+${message}
+      `,
       html: `
+        <h2>New Contact Form Submission</h2>
         <p><b>Name:</b> ${name}</p>
         <p><b>Email:</b> ${email}</p>
-        <p><b>Message:</b><br/>${message}</p>
+        <p><b>Message:</b></p>
+        <p>${message}</p>
       `
     });
 
-    // Confirmation email to user
+    // ✅ Confirmation email to user
     await transporter.sendMail({
       from: `"AI Career Counselor" <${process.env.EMAIL_USER}>`,
       to: email,
-      subject: `We received your message!`,
-      text: `Hi ${name},
+      subject: 'We received your message!',
+      text: `
+Hi ${name},
 
-Thank you for reaching out! We have received your message and will get back to you soon.
+Thank you for reaching out!
+
+We have received your message and will get back to you soon.
 
 Best regards,
-AI Career Counselor Team`,
+AI Career Counselor Team
+      `,
       html: `
+        <h2>Message Received</h2>
         <p>Hi <b>${name}</b>,</p>
-        <p>Thank you for reaching out! We have received your message and will get back to you soon.</p>
-        <p>Best regards,<br/><b>AI Career Counselor Team</b></p>
+        <p>Thank you for reaching out!</p>
+        <p>We have received your message and will get back to you soon.</p>
+        <br/>
+        <p>Best regards,</p>
+        <p><b>AI Career Counselor Team</b></p>
       `
     });
 
-    res.json({
+    // ✅ Success response
+    res.status(200).json({
       success: true,
-      msg: 'Message sent successfully and confirmation email sent!'
+      msg: 'Message sent successfully!'
     });
 
   } catch (error) {

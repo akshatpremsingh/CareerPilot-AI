@@ -12,10 +12,6 @@ CareerPilot AI leverages Artificial Intelligence to provide personalized career 
 
 ![Home Page](screenshots/homepage.png)
 
-### 📄 Resume Analysis
-
-![Resume Analysis](screenshots/resume-analysis.png)
-
 ### 🤖 AI Career Chat Assistant
 
 ![AI Career Chat Assistant](screenshots/ai-career-chat.png)
@@ -23,6 +19,10 @@ CareerPilot AI leverages Artificial Intelligence to provide personalized career 
 ### 👤 Dashboard
 
 ![Dashboard](screenshots/dashboard.png)
+
+### 📄 Resume Analysis
+
+![Resume Analysis](screenshots/resume-analysis.png)
 
 
 ## ✨ Features

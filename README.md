@@ -214,7 +214,7 @@ https://careerpilot-ai-dlfig.onrender.com
 * User Experience Implementation
 * Frontend Architecture & Development
 
-### Anvi Gupta
+### Avni Gupta
 
 * Project Documentation
 * Thesis Paper Preparation

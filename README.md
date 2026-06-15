@@ -6,6 +6,25 @@ An AI-powered career guidance platform designed to help students and professiona
 
 CareerPilot AI leverages Artificial Intelligence to provide personalized career counseling, resume analysis, skill gap detection, job recommendations, and interview preparation support. The platform helps users identify suitable career paths and improve their employability through data-driven insights.
 
+## 📸 Screenshots
+
+### 🏠 Home Page
+
+![Home Page](screenshots/homepage.png)
+
+### 📄 Resume Analysis
+
+![Resume Analysis](screenshots/resume-analysis.png)
+
+### 🤖 AI Career Chat Assistant
+
+![AI Career Chat Assistant](screenshots/ai-career-chat.png)
+
+### 👤 Dashboard
+
+![Dashboard](screenshots/dashboard.png)
+
+
 ## ✨ Features
 
 ### 🎯 Career Guidance

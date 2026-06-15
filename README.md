@@ -194,13 +194,38 @@ https://careerpilot-ai-dlfig.onrender.com
 - Career analytics dashboard
 - Multi-language support
 
-## 👨‍💻 Author
+## 👥 Project Team
 
-**Akshat Prem Singh**
+### Akshat Prem Singh
 
-Bachelor of Technology (Computer Science)
+* Backend Development
+* Database Design & Integration
+* API Development
+* Authentication System Implementation
+* AI Integration
+* Frontend–Backend Integration
+* Application Deployment
+* Version Control & Repository Management
 
-GitHub: https://github.com/akshatpremsingh
+### Aashi Piproliya
+
+* Frontend Development
+* User Interface Design
+* User Experience Implementation
+* Frontend Architecture & Development
+
+### Anvi Gupta
+
+* Project Documentation
+* Thesis Paper Preparation
+* Project Report Preparation
+* Presentation (PPT) Development 
+* Project Coordination and Support
+
+## 👨‍🎓 Academic Project
+
+CareerPilot AI was developed as a collaborative B.Tech Computer Science major project. Team members contributed across backend development, frontend development, AI integration, system integration, documentation, thesis preparation, deployment, and project presentation.
+
 
 ## 📜 License
 

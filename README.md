@@ -139,13 +139,24 @@ npm install
 
 ### Configure Environment Variables
 
-Create a `.env` file in the root directory:
+Create a `.env` file in the project root directory:
 
 ```env
 MONGODB_URI=your_mongodb_connection_string
 JWT_SECRET=your_jwt_secret
-AI_API_KEY=your_api_key
+
+# Server Configuration
+PORT=5000
+CLIENT_URL=http://localhost:5000
+
+# AI Service (OpenRouter)
+OPENROUTER_API_KEY=your_openrouter_api_key
+
+# Email Service
+EMAIL_USER=your_email_address
+EMAIL_PASS=your_email_app_password
 ```
+
 
 ### Start the Application
 

@@ -16,7 +16,7 @@ CareerPilot AI leverages Artificial Intelligence to provide personalized career 
 
 ![AI Career Chat Assistant](screenshots/ai-career-chat.png)
 
-### 👤 Dashboard
+### 👤 User Dashboard
 
 ![Dashboard](screenshots/dashboard.png)
 

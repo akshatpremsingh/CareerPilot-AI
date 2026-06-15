@@ -178,7 +178,7 @@ http://localhost:5000
 
 ## 🌐 Live Demo
 
-https://careerpilot-ai-dlfig.onrender.com
+https://careerpilot-ai-dlfg.onrender.com
 
 ## 🎯 Use Cases
 

@@ -224,9 +224,6 @@ https://careerpilot-ai-dlfg.onrender.com
 * User Interface Design
 * User Experience Implementation
 * Frontend Architecture & Development
-
-### Avni Gupta
-
 * Project Documentation
 * Thesis Paper Preparation
 * Project Report Preparation
